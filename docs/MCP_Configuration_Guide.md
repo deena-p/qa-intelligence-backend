@@ -108,7 +108,27 @@ If you have already configured Claude Desktop on your machine:
 
 ---
 
-## 5. Microsoft 365 Copilot (via Copilot Studio)
+## 5. Cursor IDE Setup
+
+Cursor provides native support for MCP servers. You can configure them either through the UI or via a JSON file.
+
+### Option 1: Using the `.cursor/mcp.json` file (Recommended)
+1. In the root of your project, create a new directory named `.cursor` if it doesn't already exist.
+2. Inside that directory, create a file named `mcp.json` (e.g., `/Users/deena/workspace/qa-intelligence-backend/.cursor/mcp.json`).
+3. Paste the **Base Configuration** JSON payload (from the top of this guide) into `mcp.json` and save it. Cursor will automatically detect and connect to the servers for this specific workspace.
+
+### Option 2: Using the Cursor Settings UI
+1. Open Cursor Settings (`Cmd/Ctrl + Shift + J` or the gear icon).
+2. Navigate to **Features** > **MCP** (or **Tools & Integrations** > **MCP** depending on the Cursor version).
+3. Click **+ Add New MCP Server**.
+4. Select **command** as the type.
+5. Enter the Name, Command, and Arguments exactly as they are defined in the base JSON configuration above. 
+6. Add the Database Environment Variables (`DB_USER`, etc.) in the provided fields.
+7. Click **Save**. You should see a green dot indicating the server is connected and ready to use in the Cursor chat!
+
+---
+
+## 6. Microsoft 365 Copilot (via Copilot Studio)
 
 Microsoft 365 Copilot supports MCP by integrating servers through **Microsoft Copilot Studio**. However, because it is a cloud service, your MCP server must be exposed as a web endpoint (using Server-Sent Events / SSE transport) rather than running locally via standard command line processes (`stdio`).
 
