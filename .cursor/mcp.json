@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "qa-filesystem-core": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/deena/workspace/enpl-qa-automation-v2/enpl-ui-automation/src/test/java",
+        "/Users/deena/workspace/enpl-qa-automation-v2/enpl-ui-automation/src/test/resources/features",
+        "/Users/deena/workspace/enpl-qa-automation-v2/enpl-ui-automation/target/allure-results",
+        "/Users/deena/workspace/enpl-qa-automation-v2/enpl-ui-automation/src/main/java/com/publicissapient/ui"
+      ]
+    },
+    "qa-database-intel": {
+      "command": "/Users/deena/workspace/qa-intelligence-backend/venv/bin/python",
+      "args": [
+        "/Users/deena/workspace/qa-intelligence-backend/src/mcp_server.py"
+      ],
+      "env": {
+        "DB_HOST": "localhost",
+        "DB_PORT": "5432",
+        "DB_NAME": "qa_intelligence",
+        "DB_USER": "postgres",
+        "DB_PASSWORD": "postgres"
+      }
+    }
+  }
+}
